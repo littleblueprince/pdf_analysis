@@ -27,9 +27,8 @@ def find_frequent_patterns(strings, n, min_support=0.5):
 
 
 # 示例字符串list
-strings = ['adadadedfgdf', 'eiejdejdfjdejdeieieifi', 'eiejdfjdejdejdefieiei', 'eiejdfjdejdejdeifeiei',
-           'eiejdfjdejdejdeieieif']
+strings = ['adadadedfgdf','asdasd']
 
 # 寻找频繁的双字母pattern
-frequent_patterns = find_frequent_patterns(strings, n=6, min_support=0.8)
+frequent_patterns = find_frequent_patterns(strings, n=3, min_support=0.8)
 print(frequent_patterns)
