@@ -196,7 +196,7 @@ if __name__ == "__main__":
                      'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
                      'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-    file_path = "日志参考1.pdf"
+    file_path = "Splunk-9.1.1-SearchReference.pdf"
     # extract_text_font_infos
     text_font_infos = extract_text_font_info(file_path)
     # merge
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     # 寻找频繁的3字母pattern
     converted_data = [[char for char in item] for item in str_list]
 
-    print("切分以及筛查之后的数据集：")
+    print("切分之后的数据集：")
     print(converted_data)
     print('-' * 100)
 
@@ -244,7 +244,7 @@ if __name__ == "__main__":
     fp_result = {}
     for key, value in zip(frequent_patterns_item, frequent_patterns_support):
         key = ''.join(key)
-        if 2 <= len(key) <= 3 and value >= 0.02:
+        if 2 <= len(key) <= 3 and value >= 0.01:
             fp_result[key] = value
     fp_result = dict(sorted(fp_result.items(), key=lambda item: item[1], reverse=True))
 
@@ -272,3 +272,5 @@ if __name__ == "__main__":
         print('\n')
 
 
+#todo:表格部分提取需要特殊处理吗?
+#todo:书签信息需要使用吗?
