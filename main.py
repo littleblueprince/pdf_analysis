@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 import re
 import string
+
 import fitz
-import utils
 import pandas as pd
 from mlxtend.frequent_patterns import fpgrowth
 from mlxtend.preprocessing import TransactionEncoder
+
+import utils
 
 # print(fitz.__doc__)
 
@@ -196,7 +198,7 @@ if __name__ == "__main__":
                      'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
                      'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-    file_path = "Splunk-9.1.1-SearchReference.pdf"
+    file_path = "示例.pdf"
     # extract_text_font_infos
     text_font_infos = extract_text_font_info(file_path)
     # merge
@@ -271,6 +273,5 @@ if __name__ == "__main__":
                     print(merged_data_list[position + i].text)
         print('\n')
 
-
-#todo:表格部分提取需要特殊处理吗?
-#todo:书签信息需要使用吗?
+# todo:表格部分提取需要特殊处理吗?
+# todo:书签信息需要使用吗?

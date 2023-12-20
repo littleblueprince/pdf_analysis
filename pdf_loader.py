@@ -276,7 +276,7 @@ if __name__ == "__main__":
     # self.font_size = font_size
     # self.is_bold = is_bold
 
-    root = extract_text_to_tree('示例.pdf')
+    root = extract_text_to_tree('关于发布本市建设工程概算相关费率的通知 沪建标定联[2023]486号（含附件）.pdf')
     # for pre, _, node in RenderTree(root):
     #     print(f"{pre}{node.name.text} {node.name.font_size}")
     get_tree_text_length(root)
@@ -287,23 +287,25 @@ if __name__ == "__main__":
     canonical_tree(root, body_font_size)
 
     # 渲染展示整个树结构
-    # tree = RenderTree(root)
-    # for pre, fill, node in RenderTree(root):
-    #     print(f"{pre}{node.name.text}")
+    tree = RenderTree(root)
+    for pre, fill, node in RenderTree(root):
+        print(f"{pre}{node.name.text}")
 
     # 存储到txt
-    # tree_to_txt(root, 'tree.txt')
+    tree_to_txt(root, 'tree.txt')
 
     # 从txt文件读取
-    # loaded_tree = txt_to_tree('tree.txt')
+    loaded_tree = txt_to_tree('tree.txt')
 
     # 渲染树
     # tree_str = "\n".join([f"{pre}{node.name.text}  {node.name.font_size}  {node.name.is_bold}" for pre, fill, node in
     #                       RenderTree(root)])
+    tree_str = "\n".join([f"{pre}{node.name.text}" for pre, fill, node in
+                          RenderTree(root)])
 
     # 将渲染结果保存到文件
-    # with open("RenderTree.txt", "w", encoding='utf-8') as file:
-    #     file.write(tree_str)
+    with open("RenderTree.txt", "w", encoding='utf-8') as file:
+        file.write(tree_str)
 
     # 将树存储为DOT格式
     # dot_exporter = DotExporter(root)
